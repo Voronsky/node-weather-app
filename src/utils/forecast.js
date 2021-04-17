@@ -16,11 +16,13 @@ const forecast = (lat, long, callback) => {
          callback('unable to find location!')
      }
      else{
-         const {temperature, weather_descriptions, feelslike} = body.current
+         const {temperature, weather_descriptions, feelslike, humidity} = body.current
 
          // Explicitly undefining the error param
          callback(undefined,
-            weather_descriptions[0] + '. It is currently ' + temperature + ' degrees out.' + ' It feels like ' + feelslike + ' degrees out.'
+            weather_descriptions[0] + '. It is currently ' + temperature + ' degrees out.' + 
+            ' It feels like ' + feelslike  + ' degrees out.' 
+            + ' The Humidity is ' + humidity + '%'
          )
      }
     })
