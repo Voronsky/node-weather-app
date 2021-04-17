@@ -15,6 +15,7 @@ const viewsPath = path.join(__dirname, '../templates/views')
 const partialsPath = path.join(__dirname, '../templates/partials') // advanced templating for hbs
 
 const app = express()
+const port = process.env.PORT || 3000
 
 
 // Setup handle bars engine and views location
@@ -108,6 +109,6 @@ app.get('*',(req,res)=>{
     })
 })
 
-app.listen(3000, ()=>{
-    console.log('Server is up running on port 3000')
+app.listen(port, ()=>{
+    console.log('Server is up running on port '+ port)
 })
